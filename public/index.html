@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Jquery-Light bulb</title>
+</head>
+<body>
+    <main>
+        <div id="first">
+            <img src="./Assets/apagada.png" alt="ola" >
+            <div>
+                <button id="lampOn">ON</button>
+                <button id="lampOff">OFF</button>
+                <button id="lampReset">RESET</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+
+        $('#lampOff').click((e)=>{
+            $('img').attr('src','./Assets/apagada.png')
+        }).dblclick((e)=>{
+            $('img').attr('src','./Assets/quebrada.png')
+            $('#lampOn').remove()
+            $('#lampOff').remove()
+        })
+        $('#lampOn').click((e)=>{
+            $('img').attr('src','./Assets/ligada.png')
+        }).dblclick((e)=>{
+            $('img').attr('src','./Assets/quebrada.png')
+            $('#lampOff').remove()
+            $('#lampOn').remove()
+        })
+        $('#lampReset').click(()=>{
+            document.location.reload(true);
+        })
+    </script>
+</body>
+</html>
